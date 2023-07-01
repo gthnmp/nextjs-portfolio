@@ -1,0 +1,95 @@
+{
+  "path":"/about",
+  "metadata":{
+    "title":"About",
+    "description":"Gathan Mahesa is a freelance web developer, that specialize in interactive user interface, dynamic user experience, and motions",
+    "charset":"UTF-8",
+    "robots":"index, follow",
+    "viewport":"width=device-width, initial-scale=1.0"
+  },
+  "header":{
+      "title":"About Me,\nMyself, & I",
+      "paragraph":"I'm a freelance web developer located in Indonesia. I specialize in building interactive user interface, appealing user experience, dynamic web motions and animation.\nI love to do problem solving and learning new technologies. Interested in the web development spectrum and working with ambitious projects with interesting and positive people."
+  },
+  "main":{
+    "certification": {
+      "title": "Certification",
+      "type":"list",
+      "list": [
+        {
+          "name" : "Problem Solving (Basic)",
+          "issuer": "Hackerrank",
+          "date":"June 2023"
+        },
+        {
+          "name" : "React (Basic)",
+          "issuer": "Hackerrank",
+          "date":"June 2023"
+        },
+        {
+          "name" : "Javascript (Basic)",
+          "issuer": "Dicoding",
+          "date":"June 2023"
+        },
+        {
+          "name" : "CSS",
+          "issuer": "Hackerrank",
+          "date":"June 2023"
+        },
+        {
+          "name" : "Python (Basic)",
+          "issuer": "Hackerrank",
+          "date":"June 2023"
+        },
+        {
+          "name" : "Certificate Of Competence",
+          "issuer": "National Agency for Certification of Professions",
+          "date":"March 2023"
+        },
+        {
+          "name" : "MikroTik Certified Network Associate",
+          "issuer": "MikroTik",
+          "date":"October 2022"
+        }
+      ]
+    },
+    "work":{
+      "title":"Working Experience",
+      "type":"list",
+      "experience":[
+        {
+          "jobTitle" : "Intern",
+          "place": "North Jakarta Immigration Office",
+          "date":"July 2022 - September 2022"
+        }
+      ]
+    }
+  },
+  "footer":{
+    "contact":{
+      "title":"Get In Touch",
+      "socials":[
+        {
+          "name":"LinkedIn",
+          "href":"https://www.linkedin.com/in/gathan/"
+        },
+        {
+          "name":"Twitter",
+          "href":"https://twitter.com/viograce_"
+        },
+        {
+          "name":"Instagram",
+          "href":"https://www.instagram.com/gthnmp/"
+        },
+        {
+          "name":"Github",
+          "href":"https://github.com/gthnmp"
+        },
+        {
+          "name":"Mail",
+          "href":"mailto:gathan.mahesa@gmail.com"
+        }
+      ]
+    }
+  }
+}

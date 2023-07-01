@@ -1,0 +1,37 @@
+{
+  "path":"/",
+  "metadata":{
+    "title":"Gathan Mahesa ━ Web  Developer",
+    "description":"Gathan Mahesa is a freelance web developer, that specialize in interactive user interface, dynamic user experience, and motions",
+    "charset":"UTF-8",
+    "robots":"index, follow",
+    "viewport":"width=device-width, initial-scale=1.0"
+  },
+  "preface":{
+      "name":"Introduction",
+      "title":"Gathan\nMahesa",
+      "summary":"Hey there! Welcome to my personal portfolio\nI'm truly honored to have you here. Take a peek at my projects.\nSit back, relax, and enjoy your visit!"
+  },
+  "sections":{
+    "about": {
+      "directTo": "/about",
+      "title": "About Me,\nMyself, & I",
+      "summary": "Web developer. Specialize in interactive UI and dynamic user experiences. Enthusiastic learner, problem solver. Love to do ambitious projects, and positive collaborations"
+    },
+    "projects": {
+      "directTo": "/projects",
+      "title": "Selected\nProjects",
+      "summary": "Created Jakarta's history website, the beauty of shader art, and Recreated American Manhunt documentary landing website."
+    },
+    "skills": {
+      "directTo": "/skills",
+      "title": "Technical\nSkills",
+      "summary": "Proficient in React JS, Three JS, Tailwind, HTML, CSS, Javascript, and MERN Stack"
+    },
+    "contact": {
+      "directTo": "/contact",
+      "title": "Get In Touch",
+      "summary": "Open for questions and collaborations. You can contact me via email. Thank you for visiting!"
+    }
+  }
+}
