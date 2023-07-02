@@ -70,9 +70,9 @@ const Minimap: React.FC = () => {
   }, []);
 
   return (
-    <div ref ={minimap} className="w-80 top-60 left-20 z-20 fixed">
+    <div ref ={minimap} className="w-80 top-60 left-20 z-20 fixed hidden lg:block">
       <div ref={minimapSize} className="relative z-10"></div>
-      <div ref={viewer} className="absolute w-full top-0 left-0 origin-top-left z-20 border-1/2 border-neutral-800 dark:border-neutral-100 "></div>
+      <div ref={viewer} className="absolute w-full top-0 left-0 origin-top-left z-20 border-1/2 border-neutral-800"></div>
       <div ref={minimapContent} className="absolute top-0 left-10 w-full h-full z-[-1] origin-top-left">
         <Content content={content} />
       </div>
