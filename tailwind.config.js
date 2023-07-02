@@ -15,6 +15,11 @@ module.exports = {
       fontFamily: {
         sans : ['var(--font-open-sans)'],
         serif : ['var(--font-noto-serif)'],
+      },
+      borderWidth:{
+        '1/4':'0.25px',
+        '1/2':'0.5px',
+        '1':'1px'
       }
     },
   },

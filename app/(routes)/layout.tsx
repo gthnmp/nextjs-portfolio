@@ -1,7 +1,8 @@
 import './globals.css';
 import { openSans, notoSerif } from '../_assets/fonts';
-import BackButton from '../_component/Navigation';
+import Navigation from '../_component/Navigation';
 
+//dark:bg-neutral-900 dark:text-neutral-100
 export default function RootLayout({
   children,
 }: {
@@ -12,8 +13,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg" sizes="<generated>"/>
       </head>
-      <body className='bg-white text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100'>
-        <BackButton/>
+      <body className='bg-white text-neutral-800'>
+        <Navigation/>
         {children}
       </body>
     </html>

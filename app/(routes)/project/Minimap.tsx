@@ -1,7 +1,7 @@
 "use client"
 import { useRef, useEffect } from "react";
 import Content from "./Content";
-import content from '@/app/_api/about.json';
+import content from '@/app/_api/project.json';
 
 const Minimap: React.FC = () => {
   const minimap = useRef<HTMLDivElement>(null);

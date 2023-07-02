@@ -1,0 +1,62 @@
+{
+  "path":"/project",
+  "metadata":{
+    "title":"Projects",
+    "description":"Gathan Mahesa is a freelance web developer, that specialize in interactive user interface, dynamic user experience, and motions",
+    "charset":"UTF-8",
+    "robots":"index, follow",
+    "viewport":"width=device-width, initial-scale=1.0"
+  },
+  "header":{
+      "title":"Selected\nProjects"
+  },
+  "main":{
+    "projects": {
+      "title": "Projects",
+      "list": [
+        {
+          "name" : "Jakarta:\nA Timeless Heritage",
+          "issuer": "Unfinished",
+          "date":"June 2023"
+        },
+        {
+          "name" : "Shader Art:\nThe Introduction",
+          "issuer": "Finished",
+          "date":"June 2023"
+        },
+        {
+          "name" : "Recreate Netflix\nLanding Page",
+          "issuer": "Finished",
+          "date":"May 2023"
+        }
+      ]
+    }
+  },
+  "footer":{
+    "contact":{
+      "title":"Get In Touch",
+      "list":[
+        {
+          "name":"LinkedIn",
+          "href":"https://www.linkedin.com/in/gathan/"
+        },
+        {
+          "name":"Twitter",
+          "href":"https://twitter.com/viograce_"
+        },
+        {
+          "name":"Instagram",
+          "href":"https://www.instagram.com/gthnmp/"
+        },
+        {
+          "name":"Github",
+          "href":"https://github.com/gthnmp"
+        },
+        {
+          "name":"Mail",
+          "href":"mailto:gathan.mahesa@gmail.com"
+        }
+      ]
+    }
+  }
+}

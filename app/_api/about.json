@@ -14,7 +14,6 @@
   "main":{
     "certification": {
       "title": "Certification",
-      "type":"list",
       "list": [
         {
           "name" : "Problem Solving (Basic)",
@@ -55,8 +54,7 @@
     },
     "work":{
       "title":"Working Experience",
-      "type":"list",
-      "experience":[
+      "list":[
         {
           "jobTitle" : "Intern",
           "place": "North Jakarta Immigration Office",
@@ -68,7 +66,7 @@
   "footer":{
     "contact":{
       "title":"Get In Touch",
-      "socials":[
+      "list":[
         {
           "name":"LinkedIn",
           "href":"https://www.linkedin.com/in/gathan/"

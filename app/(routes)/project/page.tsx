@@ -1,7 +1,7 @@
 import React from 'react';
 import Minimap from './Minimap';
 import Content from './Content';
-import content from '../../_api/about.json';
+import content from '../../_api/project.json';
 import Wrapper from '@/app/_component/SmoothScroll';
 
 interface AboutProps {}
@@ -19,14 +19,11 @@ export async function generateMetadata() {
 
 const About: React.FC<AboutProps> = () => {
   return (
-    <>
-    <Minimap />
     <Wrapper>
-      <div className="flex justify-end w-screen h-full px-24">
-        <Content content={content} />
+      <div className="w-screen h-full">
+        <Content/>
       </div>
     </Wrapper>
-    </>
   );
 };
 
