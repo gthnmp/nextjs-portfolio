@@ -1,6 +1,6 @@
 import { createPreface } from '../_component/tableofcontent/createPreface';
 import { createChapters } from '../_component/tableofcontent/createChapters';
-import Wrapper from '../_component/SmoothScroll';
+import Wrapper from '../_component/global/SmoothScroll';
 import { FC } from 'react';
 import content from '@/app/_api/tableofcontent.json'
 

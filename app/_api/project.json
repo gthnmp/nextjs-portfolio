@@ -8,55 +8,44 @@
     "viewport":"width=device-width, initial-scale=1.0"
   },
   "header":{
-      "title":"Selected\nProjects"
+    "title":"SELECTED\nPROJECT"
   },
   "main":{
-    "projects": {
-      "title": "Projects",
-      "list": [
+    "Jakarta":{
+      "cover":{
+        "projectName":"Jakarta : A Timeless Heritage",
+        "headline":"A Step Into\nJakarta's Historic Timeline",
+        "link":"https://batavia.vercel.app/",
+        "source":"/assets/monas.jpg",
+        "alt":"A picture of The National Monument of Indonesia"
+      },
+      "description":{
+        "number":"01",
+        "paragraph":"This project is a dedicated website to celebrate the 496th anniversary of Jakarta. Taking inspiration from the elegant design of canals-amsterdam.com, a website dedicated to Amsterdam's canals history, I was immediately astonished and thought, \"This design is truly amazing, how about I make my own about Jakarta?.\" Motivated by this inspiration, I tried to recreate a similar aesthetic for the Jakarta history website, striving to capture the essence of both cities while delivering an engaging user experience."
+      },
+      "preview":[
         {
-          "name" : "Jakarta:\nA Timeless Heritage",
-          "issuer": "Unfinished",
-          "date":"June 2023"
+          "source":"/assets/landing.png",
+          "alt":"A picture of modern day Kali Besar"
         },
         {
-          "name" : "Shader Art:\nThe Introduction",
-          "issuer": "Finished",
-          "date":"June 2023"
+          "source":"/assets/navigation.png",
+          "alt":"Landing page of batavia.vercel.app"
         },
         {
-          "name" : "Recreate Netflix\nLanding Page",
-          "issuer": "Finished",
-          "date":"May 2023"
+          "source":"/assets/body.png",
+          "alt":"Section of batavia.vercel.app explaining names of Jakarta"
+        },
+        {
+          "source":"/assets/4th-century.jpg",
+          "alt":"Jakarta on the 4th century"
+        },
+        {
+          "source":"/assets/16th-century.jpg",
+          "alt":"Jakarta on the 16th century"
         }
-      ]
-    }
-  },
-  "footer":{
-    "contact":{
-      "title":"Get In Touch",
-      "list":[
-        {
-          "name":"LinkedIn",
-          "href":"https://www.linkedin.com/in/gathan/"
-        },
-        {
-          "name":"Twitter",
-          "href":"https://twitter.com/viograce_"
-        },
-        {
-          "name":"Instagram",
-          "href":"https://www.instagram.com/gthnmp/"
-        },
-        {
-          "name":"Github",
-          "href":"https://github.com/gthnmp"
-        },
-        {
-          "name":"Mail",
-          "href":"mailto:gathan.mahesa@gmail.com"
-        }
-      ]
+      ] 
     }
   }
+
 }

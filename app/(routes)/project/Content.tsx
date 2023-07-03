@@ -1,8 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
-import Header from '@/app/_component/about/Header';
-import content from '@/app/_api/project.json'
-import Jakarta from '@/app/_assets/uray-zulfikar-UjJS-liCzIE-unsplash.jpg'
+import Project from '@/app/_component/project/Project';
+import projectContent from '@/app/_api/project.json'
+import {BsArrowDown} from 'react-icons/bs'
 
 interface ContentProps {
   content?: {
@@ -18,20 +17,35 @@ interface ContentProps {
 }
 
 
-const WideImage: React.FC<{ src: string, alt: string }> = ({ src, alt }) => {
+interface HeaderProps {
+  title: string;
+}
+
+function Header({ title }: HeaderProps) {
+  const titleLines: string[] = title.split('\n');
+
   return (
-    <div className='w-screen h-screen bg-green-500'>
-      <Image src={src} alt={alt} />
-    </div>
+    <header className='relative flex flex-col justify-center items-center gap-5'>
+      <span className='text-base'>02</span>
+      <span className='font-sans text-2xl uppercase'>Gathan Mahesa</span>
+      <h1 className='flex flex-col justify-center items-center text text-5xl lg:text-8xl font-serif'>
+        {titleLines.map((line, index) => (
+          <span key={index}>{line}</span>
+        ))}
+      </h1>
+    </header>
   );
-};
+}
+
 
 const Content: React.FC<ContentProps> = () => {
   return (
-    <article className="w-full h-full flex flex-col justify-center items-center gap-40 pt-96 font-normal">
-      <Header title={content.header.title}/>
-      <Image src={Jakarta} alt='A picture of National Monument of Indonesia' className='aspect-video w-screen h-auto'/>
-
+    <article className="w-full  h-full flex flex-col justify-center items-center gap-20 pt-60 font-normal">
+      <Header title={projectContent.header.title}/>
+      <BsArrowDown className=''/>
+      <main>
+        <Project content={projectContent.main.Jakarta}/>
+      </main>
     </article>
   );
 };
