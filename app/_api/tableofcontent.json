@@ -23,11 +23,6 @@
       "title": "Selected\nProjects",
       "summary": "Created Jakarta's history website, the beauty of shader art, and Recreated American Manhunt documentary landing website."
     },
-    "skills": {
-      "directTo": "/skills",
-      "title": "Technical\nSkills",
-      "summary": "Proficient in React JS, Three JS, Tailwind, HTML, CSS, Javascript, and MERN Stack"
-    },
     "contact": {
       "directTo": "/contact",
       "title": "Get In Touch",

@@ -61,6 +61,24 @@
           "date":"July 2022 - September 2022"
         }
       ]
+    },
+    "skills":{
+      "title":"What I Use",
+      "list":[
+        "Next JS",
+        "Vite",
+        "React JS",
+        "Typescript",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "Tailwind",
+        "Mongodb",
+        "SQLite",
+        "Python",
+        "Git",
+        "Bash"
+      ]
     }
   },
   "footer":{

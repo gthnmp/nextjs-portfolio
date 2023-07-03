@@ -7,28 +7,7 @@ interface ListItem {
 interface ListProps {
   title: string;
   list: ListItem[];
-  primary?: number[];
 }
-
-
-export const DynamicList: React.FC<ListProps> = ({ title, list, primary = [1] }) => {
-  return (
-    <section className='flex flex-col gap-5'>
-      <h1 className='lg:text-3xl text-xl'>{title}</h1>
-      <ul className='px-10 flex flex-col gap-5 lg:gap-10'>
-        {list.map((item, index) => (
-          <li key={index} className='flex flex-col gap-1'>
-            {Object.entries(item).map(([key, value], i) => (
-              <p key={key} className={`${primary.includes(i + 1) ? "lg:text-3xl text-xl" : "text-normal text-neutral-400"}`}>
-                {value}
-              </p>
-            ))}
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-};
 
 export const CertList: React.FC<ListProps> = ({ title, list }) => {
   return (
@@ -61,6 +40,21 @@ export const ExpList: React.FC<ListProps> = ({ title, list }) => {
               <span>{item.place}</span>
             </div>
             <span className='text-normal text-neutral-400'>{item.date}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export const SkillList = ({ title, list } : {title : string, list : string[]}) => {
+  return (
+    <section className='flex flex-col gap-8'>
+      <h1 className='lg:text-3xl text-xl'>{title}</h1>
+      <ul className='px-10 flex flex-col gap'>
+        {list.map((item, index) => (
+          <li key={index}>
+            <h2 className='text-normal text-neutral-400  hover:text-gray-600 f-gray-200'>{item}</h2>
           </li>
         ))}
       </ul>

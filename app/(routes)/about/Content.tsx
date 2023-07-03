@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/app/_component/about/Header';
-import { CertList, ExpList, ContactList } from '@/app/_component/about/Lists';
+import { CertList, ExpList, ContactList, SkillList } from '@/app/_component/about/Lists';
 
 interface ContentProps {
   content: {
@@ -8,6 +8,7 @@ interface ContentProps {
     main: {
       certification: any;
       work: any;
+      skills:any;
     };
     footer: {
       contact: any;
@@ -22,6 +23,7 @@ const Content: React.FC<ContentProps> = ({ content }) => {
       <Header {...header} />
       <CertList {...main.certification} />
       <ExpList {...main.work} primary={[1, 2]} />
+      <SkillList {...main.skills} />
       <ContactList {...footer.contact} />
     </article>
   );
