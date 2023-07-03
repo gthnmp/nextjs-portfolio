@@ -1,3 +1,5 @@
+import Headline from "../global/Headline";
+
 interface HeaderProps {
   title: string;
   paragraph?: string;
@@ -9,12 +11,7 @@ export default function Header({ title, paragraph }: HeaderProps) {
 
   return (
     <header className='flex flex-col gap-20 lg:gap-40'>
-      <h1 className='flex flex-col text text-5xl lg:text-8xl font-serif'>
-        {titleLines.map((line, index) => (
-          <span key={index}>{line}</span>
-        ))}
-      </h1>
-
+      <Headline alignment="text-left">{titleLines}</Headline>
       {paragraph && (
         <p className='flex flex-col gap-10 text-xl lg:text-3xl leading-8 lg:leading-10'>
           {paragraphLines.map((line, index) => (
