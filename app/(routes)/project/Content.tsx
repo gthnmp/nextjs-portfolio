@@ -2,6 +2,7 @@ import React from 'react';
 import Project from '@/app/_component/project/Project';
 import projectContent from '@/app/_api/project.json'
 import {BsArrowDown} from 'react-icons/bs'
+import Headline from '@/app/_component/global/Headline';
 
 interface ContentProps {
   content?: {
@@ -26,17 +27,10 @@ function Header({ title }: HeaderProps) {
 
   return (
     <header className='relative flex flex-col justify-center items-center gap-5'>
-      <span className='text-base'>02</span>
-      <span className='font-sans text-2xl uppercase'>Gathan Mahesa</span>
-      <h1 className='flex flex-col justify-center items-center text text-5xl lg:text-8xl font-serif'>
-        {titleLines.map((line, index) => (
-          <span key={index}>{line}</span>
-        ))}
-      </h1>
+      <Headline chapterNumber={"02"}>{titleLines}</Headline>
     </header>
   );
 }
-
 
 const Content: React.FC<ContentProps> = () => {
   return (
