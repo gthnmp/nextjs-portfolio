@@ -3,6 +3,7 @@ import { createChapters } from '../_component/tableofcontent/createChapters';
 import Wrapper from '../_component/global/SmoothScroll';
 import { FC } from 'react';
 import content from '@/app/_api/tableofcontent.json'
+import Cross from '../_component/tableofcontent/Cross';
 
 export async function generateMetadata(){
   const { title, description, viewport, robots, charset } = content.metadata;
@@ -17,10 +18,13 @@ export async function generateMetadata(){
 
 const TableOfContent: FC = () => {
   return (
-    <Wrapper>
-      {createPreface(content)}
-      {createChapters(content)}
-    </Wrapper>
+    <>
+      <Cross/>
+      <Wrapper>
+        {createPreface(content)}
+        {createChapters(content)}
+      </Wrapper>
+    </>
   );
 }
 
