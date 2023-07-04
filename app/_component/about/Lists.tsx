@@ -54,7 +54,7 @@ export const SkillList = ({ title, list } : {title : string, list : string[]}) =
       <ul className='px-10 flex flex-col gap'>
         {list.map((item, index) => (
           <li key={index}>
-            <h2 className='text-normal text-neutral-400  hover:text-gray-600 f-gray-200'>{item}</h2>
+            <h2 className='text-normal pointer-events-none f-gray-200'>{item}</h2>
           </li>
         ))}
       </ul>
