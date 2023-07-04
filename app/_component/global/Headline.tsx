@@ -15,7 +15,7 @@ const Headline: React.FC<HeadlineProps> = ({ alignment = 'text-center', chapterN
       <span className='font-sans text-2xl uppercase'>Gathan Mahesa</span>
       <h1 className={classes}>
         {React.Children.map(children, (child, index) => (
-          <span key={index}>{child}</span>
+          <span key={index} className='pb-3'>{child}</span>
         ))}
       </h1>
     </div>
