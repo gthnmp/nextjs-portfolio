@@ -1,6 +1,8 @@
 import './globals.css';
+import './animations.css'
 import { openSans, notoSerif } from '../_assets/fonts';
 import Navigation from '../_component/global/Navigation';
+import Socials from '../_component/global/Socials';
 
 //dark:bg-neutral-900 dark:text-neutral-100
 export default function RootLayout({
@@ -15,6 +17,7 @@ export default function RootLayout({
       </head>
       <body className='bg-white text-neutral-800'>
         <Navigation/>
+        <Socials/>
         {children}
       </body>
     </html>
