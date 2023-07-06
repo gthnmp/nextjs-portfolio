@@ -1,20 +1,42 @@
+.nav-layout {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto;
+    grid-template-areas: 
+    "title . grid-view line-view list-view . to-about . socials";
+  }
+  
 .grid-view-layout {  
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: auto repeat(4,1fr);
-    grid-template-areas:
-    "title . grid-view line-view list-view . to-about . socials"
+  grid-template-areas:
+  "title . grid-view line-view list-view . to-about . socials"
     "th-1 . th-5 . . . th-10 . ."
     "th-2 . . th-7 . th-9 . th-12 ."
     ". th-4 th-6 . . . th-11 . ."
     "th-3 . . th-8 . . . . th-13";
+  
+  width: 100%;
+  height: auto;
+  row-gap: 1.25rem;
+  column-gap: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .presentation-view-layout {  display: grid;
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas:
-  "th-1 th-2 th-3 th-4 th-5 th-6 th-7 th-8 th-9 th-10 th-11 th-12 th-13"
+  "th-1 th-2 th-3 th-4 th-5 th-6 th-7 th-8 th-9 th-10 th-11 th-12 th-13";
+  
+  width: 100vw;
+  height: 12rem;
+  position: absolute;
+  bottom: 0;
+  padding: 2.5rem 10rem;
+  column-gap: 1.25rem;
 }
 
 .title { grid-area: title; }
