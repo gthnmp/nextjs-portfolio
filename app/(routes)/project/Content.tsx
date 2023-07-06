@@ -1,9 +1,7 @@
 import React from 'react';
-import Socials from '@/app/_component/global/Socials';
-import Link from 'next/link';
+import Navigation from '@/app/_component/project/Navigation';
 import Thumbnails from '@/app/_component/project/Thumbnails';
 import './grid.css'
-import Navigation from '@/app/_component/project/Navigation';
 
 interface ContentProps {
   content?: {
