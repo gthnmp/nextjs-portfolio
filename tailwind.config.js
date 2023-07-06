@@ -25,7 +25,14 @@ module.exports = {
         '1/4':'0.25px',
         '1/2':'0.5px',
         '1':'1px'
-      }
+      },
+      gridTemplateColumns:{
+        '8': 'repeat(8, minmax(0, 1fr))',
+      },
+      gridTemplateRows:{
+        '8': 'repeat(8, minmax(0, 1fr))',
+        'layout':'auto 1fr 1fr 1fr 1fr'
+      },
     },
   },
   plugins: [],

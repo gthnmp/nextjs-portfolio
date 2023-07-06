@@ -1,8 +1,8 @@
 import React from 'react';
-import Project from '@/app/_component/project/Project';
-import projectContent from '@/app/_api/project.json'
-import {BsArrowDown} from 'react-icons/bs'
-import Headline from '@/app/_component/global/Headline';
+import Socials from '@/app/_component/global/Socials';
+import Link from 'next/link';
+import Thumbnails from '@/app/_component/project/Thumbnails';
+import './grid.css'
 
 interface ContentProps {
   content?: {
@@ -17,30 +17,21 @@ interface ContentProps {
   };
 }
 
-
-interface HeaderProps {
-  title: string;
-}
-
-function Header({ title }: HeaderProps) {
-  const titleLines: string[] = title.split('\n');
-
-  return (
-    <header className='relative flex flex-col justify-center items-center gap-5'>
-      <Headline chapterNumber={"02"}>{titleLines}</Headline>
-    </header>
-  );
-}
-
 const Content: React.FC<ContentProps> = () => {
   return (
-    <article className="w-full  h-full flex flex-col justify-center items-center gap-20 pt-60 font-normal">
-      <Header title={projectContent.header.title}/>
-      <BsArrowDown className=''/>
-      <main>
-        <Project content={projectContent.main.Jakarta}/>
-      </main>
-    </article>
+    <article className="w-full h-full relative">
+      <section className='grid-view-layout h-screen w-screen gap-y-5 gap-x-10 py-5 px-10 font-medium text-base'>
+        <h1 className='title'>Projects</h1>
+        <button className='grid-view flex'>Grid View</button>
+        <button className='line-view flex'>Line View</button>
+        <button className='list-view flex'>List View</button>
+        <Link href={"/about"} className='to-about'>About</Link>
+        <Socials className='socials flex justify-center items-center gap-4'/>
+        <Thumbnails/>
+      </section>
+      <section className='presentation-view-layout w-screen h-48 absolute bottom-0 px-40 gap-x-5 py-10'>
+      </section>
+    </article>  
   );
 };
 
