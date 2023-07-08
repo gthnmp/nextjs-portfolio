@@ -1,4 +1,4 @@
-import Headline from "../global/Headline";
+import Headline from "./Headline";
 
 interface HeaderProps {
   title: string;

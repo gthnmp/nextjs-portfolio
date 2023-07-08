@@ -16,7 +16,6 @@ interface ContentProps {
   };
 }
 
-
 const Content: React.FC<ContentProps> = ({ content }) => {
   const { header, main, footer } = content;
   return (

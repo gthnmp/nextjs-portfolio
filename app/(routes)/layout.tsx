@@ -1,5 +1,4 @@
 import './globals.css';
-import './animations.css'
 import { openSans, notoSerif } from '../_assets/fonts';
 import Navigation from '../_component/global/Navigation';
 import Socials from '../_component/global/Socials';
