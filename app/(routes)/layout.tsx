@@ -15,8 +15,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg" sizes="<generated>"/>
       </head>
       <body className='bg-white text-neutral-800'>
-        {/* <Navigation/> */}
-        {/* <Socials/> */}
+        <Navigation/>
         <div id="root">
           {children}
         </div>

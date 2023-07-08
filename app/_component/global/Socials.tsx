@@ -8,7 +8,6 @@ const menuItems = [
   { name: "GitHub", url: "https://github.com/gthnmp", icon: <FaGithub />}
 ];
 
-const menuListClassname = "grid-item-6 flex gap-4";
 const iconClassname = 'hover:fill-neutral-400 transition-colors duration-300'
 export default function Socials ({className} : {className : string}){
   return(

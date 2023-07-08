@@ -1,12 +1,13 @@
-"use client"
+"use server"
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Socials from "./Socials";
 
 export default function Navigation() {
-  const pathname = usePathname()
   return (
-    <Link href={pathname === "/" ? "" : "/"} className="back-button font-serif text-bases italic font-medium left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 fixed top-10 z-50 pb-2 px-3 overflow-hidden">
-      {pathname === "/" ? "Table Of Content" : "Back"}
-    </Link>
+    <nav className="fixed z-50 w-screen h-auto font-medium grid grid-cols-3 grid-rows-1 px-20 py-5 gap-x-20">
+      <h1 className="font-bold">EL217</h1>
+      <Link href="/project" className="">Project</Link>
+      <Socials className="flex gap-4 justify-end items-center "/>
+    </nav>
   );
 }
