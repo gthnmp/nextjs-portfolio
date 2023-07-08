@@ -20,9 +20,7 @@ export async function generateMetadata() {
 const About: React.FC<AboutProps> = () => {
   return (
     <Wrapper>
-      <div className="w-screen h-full">
-        <Content/>
-      </div>
+      <Content/>
     </Wrapper>
   );
 };
