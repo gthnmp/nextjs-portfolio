@@ -1,5 +1,4 @@
 import React from 'react';
-import Minimap from './Minimap';
 import Content from './Content';
 import content from '../../_api/project.json';
 import Wrapper from '@/app/_component/global/SmoothScroll';
