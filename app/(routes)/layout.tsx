@@ -17,7 +17,6 @@ export default function RootLayout({
       </head>
       <body className='bg-white text-neutral-800'>
         <Navigation/>
-        <Socials/>
         <div id="root">
           {children}
         </div>
