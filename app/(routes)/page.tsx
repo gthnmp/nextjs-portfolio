@@ -1,31 +1,33 @@
-import { createPreface } from '../_component/tableofcontent/createPreface';
-import { createChapters } from '../_component/tableofcontent/createChapters';
-import Wrapper from '../_component/global/SmoothScroll';
-import { FC } from 'react';
-import content from '@/app/_api/tableofcontent.json'
-import Cross from '../_component/tableofcontent/Cross';
+import React from 'react';
+import Minimap from './about/Minimap';
+import Content from './about/Content';
+import content from '@/app/_api/about.json';
+import Wrapper from '@/app/_component/global/SmoothScroll';
 
-export async function generateMetadata(){
+interface AboutProps {}
+
+export async function generateMetadata() {
   const { title, description, viewport, robots, charset } = content.metadata;
-  return{
+  return {
     title,
     description,
     viewport,
     robots,
     charset
-  }
+  };
 }
 
-const TableOfContent: FC = () => {
+const About: React.FC<AboutProps> = () => {
   return (
     <>
-      <Cross/>
-      <Wrapper>
-        {createPreface(content)}
-        {createChapters(content)}
-      </Wrapper>
+    <Minimap />
+    <Wrapper>
+      <div className="flex justify-end w-screen h-full px-4 lg:px-24">
+        <Content content={content} />
+      </div>
+    </Wrapper>
     </>
   );
-}
+};
 
-export default TableOfContent;
+export default About;
