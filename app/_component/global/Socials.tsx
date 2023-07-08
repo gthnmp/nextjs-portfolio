@@ -8,11 +8,10 @@ const menuItems = [
   { name: "GitHub", url: "https://github.com/gthnmp", icon: <FaGithub />}
 ];
 
-const menuListClassname = "fixed z-50 top-10 right-1/2 -translate-x-1/2 lg:right-20 lg:-translate-x-0 flex gap-4 p-2";
 const iconClassname = 'hover:fill-neutral-400 transition-colors duration-300'
-export default function Socials (){
+export default function Socials ({className} : {className : string}){
   return(
-    <ul className={menuListClassname}>
+    <ul className={className}>
       {menuItems.map((item, index) => (
         <li key={index}>
           <a href={item.url} target="_blank" aria-label={`Checkout Gathan's ${item.name}`}>
