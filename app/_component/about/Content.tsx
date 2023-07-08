@@ -19,7 +19,7 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ content }) => {
   const { header, main, footer } = content;
   return (
-    <article className="w-full lg:w-3/5 h-full flex flex-col gap-20 lg:gap-40 py-60 font-normal">
+    <article className="col-start-2 col-span-2 w-full h-full flex flex-col gap-20 lg:gap-40 py-60 font-normal">
       <Header {...header} />
       <CertList {...main.certification} />
       <ExpList {...main.work} primary={[1, 2]} />

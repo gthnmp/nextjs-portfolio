@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = () => {
     <>
     <Minimap />
     <Wrapper>
-      <div className="flex justify-end w-screen h-full px-4 lg:px-24">
+      <div className="grid grid-cols-3 auto-rows-max px-20 gap-x-20">
         <Content content={content} />
       </div>
     </Wrapper>
