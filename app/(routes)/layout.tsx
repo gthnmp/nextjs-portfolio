@@ -14,7 +14,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg" sizes="<generated>"/>
       </head>
-      <body className='bg-white text-neutral-800'>
+      <body className='bg-white text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100'>
         <Navigation/>
         <div id="root">
           {children}
