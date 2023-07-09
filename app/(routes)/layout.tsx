@@ -1,9 +1,7 @@
 import './globals.css';
 import { openSans, notoSerif } from '../_assets/fonts';
 import Navigation from '../_component/global/Navigation';
-import Socials from '../_component/global/Socials';
 
-//dark:bg-neutral-900 dark:text-neutral-100
 export default function RootLayout({
   children,
 }: {
@@ -16,9 +14,7 @@ export default function RootLayout({
       </head>
       <body className='bg-white text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100'>
         <Navigation/>
-        <div id="root">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   )
