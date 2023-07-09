@@ -8,6 +8,9 @@ const Minimap: React.FC = () => {
   const minimapSize = useRef<HTMLDivElement>(null);
   const viewer = useRef<HTMLDivElement>(null);
   const minimapContent = useRef<HTMLDivElement>(null);
+  const startY = useRef<number | null>(null);
+  const isDragging = useRef(false);
+  const maxHeight = 3000;
   
   useEffect(() => {
     let current = 0;
@@ -48,7 +51,6 @@ const Minimap: React.FC = () => {
     function trackScroll() {
       current = lerp(current, target, ease);
       current = parseFloat(current.toFixed(5));
-      target = window.scrollY;
       if (viewer.current) {
         viewer.current.style.transform = `translateY(${current * realScale}px)`;
       }
@@ -60,19 +62,47 @@ const Minimap: React.FC = () => {
       requestAnimationFrame(trackScroll);
     }
 
+    function handleMouseDown(event: MouseEvent) {
+      isDragging.current = true;
+      startY.current = event.clientY;
+    }
+
+    function handleMouseMove(event: MouseEvent) {
+      if (!isDragging.current) return;
+      const deltaY = (event.clientY - startY.current!) * 3;
+      target = Math.min(maxHeight, Math.max(0, target - deltaY));
+      startY.current = event.clientY;
+    }
+
+    function handleMouseUp() {
+      isDragging.current = false;
+    }
+
+    function handleWheel(event: WheelEvent) {
+      event.preventDefault();
+      target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 1));
+    }
     getDimensions();
     trackScroll();
     window.addEventListener("resize", getDimensions);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("resize", getDimensions);
+      window.removeEventListener("wheel", handleWheel, { passive: false });
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
   return (
     <div ref ={minimap} className="w-80 top-60 left-20 z-20 fixed hidden lg:block">
       <div ref={minimapSize} className="relative z-10"></div>
-      <div ref={viewer} className="absolute w-full top-0 left-0 origin-center z-20 border-1/2 border-neutral-800"></div>
+      <div ref={viewer} className="absolute w-full top-0 left-0 origin-center z-20 border-1/2 border-neutral-800 dark:border-neutral-500"></div>
       <div ref={minimapContent} className="absolute top-0 px-80 w-full h-full z-[-1] origin-top-left">
         <Content content={content} />
       </div>

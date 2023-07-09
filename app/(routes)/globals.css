@@ -4,13 +4,13 @@
 
 body, html {
   overflow-x: hidden;
+  user-select: none;
 }
 
 
 ::-webkit-scrollbar{
   display: none;
 }
-
 
 .title > span{
   position: relative;
