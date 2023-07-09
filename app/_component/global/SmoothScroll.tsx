@@ -50,17 +50,19 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
     function handleMouseDown(event: MouseEvent) {
       isDragging.current = true;
       startY.current = event.clientY;
+      document.body.style.cursor = 'grabbing';
     }
-
+    
     function handleMouseMove(event: MouseEvent) {
       if (!isDragging.current) return;
       const deltaY = (event.clientY - startY.current!) * 3;
       target = Math.min(maxHeight, Math.max(0, target - deltaY));
       startY.current = event.clientY;
     }
-
+    
     function handleMouseUp() {
       isDragging.current = false;
+      document.body.style.cursor = 'default';
     }
 
     function handleTouchStart(event: TouchEvent) {
@@ -81,7 +83,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
 
     function handleWheel(event: WheelEvent) {
       event.preventDefault();
-      target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 1));
+      target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 0.5));
     }
 
     handleResize();

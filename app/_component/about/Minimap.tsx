@@ -80,8 +80,9 @@ const Minimap: React.FC = () => {
 
     function handleWheel(event: WheelEvent) {
       event.preventDefault();
-      target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 1));
+      target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 0.5));
     }
+
     getDimensions();
     trackScroll();
     window.addEventListener("resize", getDimensions);
@@ -92,7 +93,7 @@ const Minimap: React.FC = () => {
 
     return () => {
       window.removeEventListener("resize", getDimensions);
-      window.removeEventListener("wheel", handleWheel, { passive: false });
+      window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
