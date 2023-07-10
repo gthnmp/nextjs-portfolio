@@ -7,7 +7,7 @@ type HeadlineProps = {
 };
 
 const Headline: React.FC<HeadlineProps> = ({ alignment = 'text-center', chapterNumber, children }) => {
-  const classes = `flex flex-col text text-5xl lg:text-8xl font-sans font-semibold uppercase`;
+  const classes = `flex flex-col text text-5xl lg:text-8xl font-cursive font-semibold uppercase`;
 
   return (
     <h1 className={classes}>

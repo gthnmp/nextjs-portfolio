@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         sans : ['var(--font-open-sans)'],
         serif : ['var(--font-noto-serif)'],
+        cursive: ['var(--font-poiret-one)']
       },
       borderWidth:{
         '1/4':'0.25px',
