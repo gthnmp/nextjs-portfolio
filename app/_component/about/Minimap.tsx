@@ -10,13 +10,15 @@ const Minimap: React.FC = () => {
   const minimapContent = useRef<HTMLDivElement>(null);
   const startY = useRef<number | null>(null);
   const isDragging = useRef(false);
-  const maxHeight = 3000;
-  
+
   useEffect(() => {
     let current = 0;
     let target = 0;
     const ease = 0.06;
     let realScale: number;
+    const content = document.querySelector(".wrapper")
+    // console.log(content?.getBoundingClientRect().height)
+    const maxHeight = content?.getBoundingClientRect().height! * 0.80;
 
     function getDimensions() {
       const bodyWidth = document.body.clientWidth;

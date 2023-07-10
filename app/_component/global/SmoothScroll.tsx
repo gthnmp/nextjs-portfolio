@@ -16,7 +16,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
     let target = 0;
     let ease = 0.075;
 
-    const maxHeight = 3000;
+    const maxHeight = ref.current?.getBoundingClientRect().height! * 0.80;
 
     function lerp(start: number, end: number, t: number) {
       return start * (1 - t) + end * t;
@@ -112,7 +112,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
   return (
     <div
       ref={ref}
-      className={`fixed will-change-transform overflow-x-hidden ${className}`}
+      className={`wrapper fixed will-change-transform overflow-x-hidden ${className}`}
     >
       {children}
     </div>

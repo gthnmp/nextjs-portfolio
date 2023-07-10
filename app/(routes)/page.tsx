@@ -19,7 +19,7 @@ export default function Homepage(){
   return (
     <>
       <Minimap />
-      <Wrapper className="grid grid-cols-3 auto-rows-max px-20 gap-x-20">
+      <Wrapper className="grid grid-cols-2 lg:grid-cols-3 auto-rows-max px-8 lg:px-20 lg:gap-x-20">
         <Content content={content} />
       </Wrapper>
     </>
