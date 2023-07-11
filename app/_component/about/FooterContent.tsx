@@ -23,6 +23,12 @@ export interface FooterProps {
 
 const MobileFooter: React.FC<FooterProps> = ({ potrait, contact }) => {
   const [ isContactVisible, setVisibilty ] = useState(false)
+  function handleClick(){
+    window.scrollTo({
+      top:0,
+      behavior: "smooth"
+    })
+  }
 
   return (
     <div className="relative grid grid-col-1 auto-rows-max gap-y-10 place-items-center">
@@ -36,9 +42,9 @@ const MobileFooter: React.FC<FooterProps> = ({ potrait, contact }) => {
           <ContactList list={contact.list}/>
         </div>
       </div>
-      {/* <button className="footer-button p-4 rounded-full w-max h-max border border-white" onClick={() => window.scrollTo(0,0)}>
+      <button className="footer-button p-4 rounded-full w-max h-max border border-white" onClick={handleClick}>
         <BsArrowUp />
-      </button> */}
+      </button>
     </div>
   );
 };
