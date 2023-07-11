@@ -121,13 +121,17 @@ const SmoothDiv: React.FC<WrapperProps> = ({ children, className }) => {
 };
 
 const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
-  const isMobileView = window.innerWidth <= 768; // Define the breakpoint for mobile view
-
+  let isMobileView = useRef<any>(null)
+  useEffect(() => {
+    isMobileView.current = window.innerWidth <= 768; // Define the breakpoint for mobile view
+  },[])
+  
   if (isMobileView) {
     return <div className={className}>{children}</div>;
   } else {
     return <SmoothDiv className={className}>{children}</SmoothDiv>;
   }
+
 };
 
 export default Wrapper;
