@@ -1,6 +1,6 @@
 "use client"
 import { useRef, useEffect } from "react";
-import Content from "./Content";
+import Content from "../about/Content";
 import content from '@/app/_api/homepage.json';
 
 const Minimap: React.FC = () => {

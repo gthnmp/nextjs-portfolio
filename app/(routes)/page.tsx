@@ -1,5 +1,5 @@
 import React from 'react';
-import Minimap from '../_component/about/Minimap';
+import Minimap from '../_component/global/Minimap';
 import Content from '../_component/about/Content';
 import content from '@/app/_api/homepage.json';
 import Wrapper from '@/app/_component/global/SmoothScroll';
@@ -19,7 +19,7 @@ export default function Homepage(){
   return (
     <>
       <Minimap />
-      <Wrapper className="grid grid-cols-2 lg:grid-cols-3 auto-rows-max px-8 lg:px-20 lg:gap-x-20">
+      <Wrapper className="grid grid-cols-2 lg:grid-cols-3 auto-rows-max lg:px-20 lg:gap-x-20">
         <Content content={content} />
       </Wrapper>
     </>

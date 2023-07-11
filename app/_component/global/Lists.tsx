@@ -5,7 +5,7 @@ interface ListItem {
 }
 
 interface ListProps {
-  title: string;
+  title?: string;
   list: ListItem[];
 }
 
@@ -62,11 +62,14 @@ export const SkillList = ({ title, list } : {title : string, list : string[]}) =
   );
 };
 
-export const ContactList: React.FC<ListProps> = ({ title, list }) => {
+export const ContactList: React.FC<ListProps> = ({ title = "", list }) => {
   return (
     <section className='flex flex-col gap-8'>
       <h1 className='lg:text-3xl text-xl'>{title}</h1>
-      <ul className='px-10 flex flex-col gap'>
+      <ul className=' grid auto-cols-max w-full  
+        grid-cols-2 gap-x-8 gap-y-2
+        lg:grid-cols-1 lg:px-10
+      '>
         {list.map((item, index) => (
           <li key={index}>
             <Link href = {item.href} className='text-normal text-neutral-400  hover:text-gray-600 f-gray-200'>{item.name}</Link>

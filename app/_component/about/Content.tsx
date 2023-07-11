@@ -1,18 +1,13 @@
 import React from 'react';
-import Header from '@/app/_component/about/Header';
-import { CertList, ExpList, ContactList, SkillList } from '@/app/_component/about/Lists';
+import Header from '@/app/_component/about/HeaderContent';
+import Main, {MainProps} from './MainContent';
+import Footer, {FooterProps} from './FooterContent';
 
 interface ContentProps {
   content: {
     header: any;
-    main: {
-      certification: any;
-      work: any;
-      skills:any;
-    };
-    footer: {
-      contact: any;
-    };
+    main: MainProps;
+    footer: FooterProps;
   };
 }
 
@@ -21,10 +16,8 @@ const Content: React.FC<ContentProps> = ({ content }) => {
   return (
     <article className="main-content col-start-1 lg:col-start-2 col-span-2 w-full h-full flex flex-col gap-20 lg:gap-40 py-60 font-normal">
       <Header {...header} />
-      <CertList {...main.certification} />
-      <ExpList {...main.work} primary={[1, 2]} />
-      <SkillList {...main.skills} />
-      <ContactList {...footer.contact} />
+      <Main {...main} />
+      <Footer {...footer} />
     </article>
   );
 };

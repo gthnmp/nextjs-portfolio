@@ -81,6 +81,10 @@
     }
   },
   "footer":{
+    "potrait":{
+      "source":"/potrait.webp",
+      "alt":"Potrait of Gathan Mahesa"
+    },
     "contact":{
       "title":"Get In Touch",
       "list":[

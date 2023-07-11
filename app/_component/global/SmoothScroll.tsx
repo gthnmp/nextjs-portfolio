@@ -1,15 +1,16 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type WrapperProps = {
   children: any;
   className?: string;
 };
 
-const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
+const SmoothDiv: React.FC<WrapperProps> = ({ children, className }) => {
   const ref = useRef<HTMLDivElement>(null);
   const startY = useRef<number | null>(null);
   const isDragging = useRef(false);
+  const [ isMobile, setIsMobile ] = useState(false)
 
   useEffect(() => {
     let current = 0;
@@ -40,7 +41,8 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
       const containerWidth = ref.current?.getBoundingClientRect().width;
       document.body.style.height = `${containerHeight}px`;
       document.body.style.width = `${containerWidth}px`;
-      ease = containerWidth! > 768 ? 0.075 : 1;
+      setIsMobile(window.innerWidth > 768 ? false : true)
+      ease = window.innerWidth > 768 ? 0.075 : 1;
     }
 
     function handleResize() {
@@ -85,17 +87,19 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
       event.preventDefault();
       target = Math.min(maxHeight, Math.max(0, target + event.deltaY * 0.5));
     }
-
+    
     handleResize();
-    smoothScroll();
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
-    window.addEventListener("wheel", handleWheel, { passive: false });
+    if(!isMobile){
+      smoothScroll();
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("mousedown", handleMouseDown);
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+      window.addEventListener("touchstart", handleTouchStart);
+      window.addEventListener("touchmove", handleTouchMove);
+      window.addEventListener("touchend", handleTouchEnd);
+      window.addEventListener("wheel", handleWheel, { passive: false });
+    }
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -107,16 +111,41 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
       window.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <div
-      ref={ref}
-      className={`wrapper fixed will-change-transform overflow-x-hidden ${className}`}
-    >
+    <div ref={ref} className={`wrapper fixed will-change-transform overflow-x-hidden ${className}`}>
       {children}
     </div>
   );
 };
+
+const MobileDiv: React.FC<WrapperProps> = ({ children, className }) => {
+  return(
+    <div className={className}>
+      {children}
+    </div>
+  )
+}
+
+const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
+  const [ isMobile, setIsMobile ] = useState(false) 
+  useEffect(() => {
+    setIsMobile(window.innerWidth > 768 ? false : true)
+    if (isMobile){
+      alert('foo')
+    }
+  },[isMobile])
+
+  return(
+    <>
+    {
+      isMobile ? 
+      <div className = {className}> {children} </div> :  
+      <SmoothDiv className={className}>{children}</SmoothDiv>
+    }
+    </>
+  )
+}
 
 export default Wrapper;
