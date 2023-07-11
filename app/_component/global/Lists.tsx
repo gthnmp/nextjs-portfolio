@@ -68,7 +68,7 @@ export const ContactList: React.FC<ListProps> = ({ title = "", list }) => {
       <h1 className='lg:text-3xl text-xl'>{title}</h1>
       <ul className=' grid auto-cols-max w-full  
         grid-cols-2 gap-x-8 gap-y-2
-        lg:grid-cols-1 lg:px-10
+        lg:grid-cols-1 lg:px-10 lg:gap-y-0
       '>
         {list.map((item, index) => (
           <li key={index}>
