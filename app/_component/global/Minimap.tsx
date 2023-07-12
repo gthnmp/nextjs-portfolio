@@ -17,7 +17,6 @@ const Minimap: React.FC = () => {
     const ease = 0.06;
     let realScale: number;
     const content = document.querySelector(".wrapper")
-    // console.log(content?.getBoundingClientRect().height)
     const maxHeight = content?.getBoundingClientRect().height! * 0.80;
 
     function getDimensions() {
@@ -101,16 +100,17 @@ const Minimap: React.FC = () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
-
-  return (
-    <div ref ={minimap} className="w-80 top-60 left-20 z-20 fixed hidden lg:block">
-      <div ref={minimapSize} className="relative z-10"></div>
-      <div ref={viewer} className="absolute w-full top-0 left-0 origin-center z-20 border-1/2 border-neutral-800 dark:border-neutral-500"></div>
-      <div ref={minimapContent} className="absolute top-0 px-80 w-full h-full z-[-1] origin-top-left">
-        <Content content={content} />
-      </div>
-    </div>
-  );
+  const isServer = typeof window === 'undefined';
+  if (!(isServer || window.innerWidth <= 768)){
+      return (
+        <div ref ={minimap} className="w-80 top-60 left-20 z-20 fixed hidden lg:block">
+          <div ref={minimapSize} className="relative z-10"></div>
+          <div ref={viewer} className="absolute w-full top-0 left-0 origin-center z-20 border-1/2 border-neutral-800 dark:border-neutral-500"></div>
+          <div ref={minimapContent} className="absolute top-0 px-80 w-full h-full z-[-1] origin-top-left">
+            <Content content={content} />
+          </div>
+        </div>
+    );
+  }
 }
-
 export default Minimap
