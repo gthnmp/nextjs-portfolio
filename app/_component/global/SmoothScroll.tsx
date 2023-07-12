@@ -118,16 +118,12 @@ const SmoothDiv: React.FC<WrapperProps> = ({ children, className }) => {
 
 
 const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
-  const isServer = typeof window === 'undefined';
-  const isMobile = window.innerWidth <= 768;
-
+  const [isMobile, setView] = useState(false)
   useEffect(() => {
-    if (!isServer && isMobile) {
-      // Perform any client-side operations here
-    }
+    setView(window.innerWidth <= 768)
   }, []); // Empty dependency array ensures the effect runs only once after mount
 
-  if (isServer || isMobile) {
+  if (isMobile) {
     return <div className={className}>{children}</div>;
   } else {
     return <SmoothDiv className={className}>{children}</SmoothDiv>;

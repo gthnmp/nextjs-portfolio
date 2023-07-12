@@ -1,9 +1,34 @@
 import { SkillList, CertList, ExpList } from "../global/Lists";
 
+type CertListType = {
+  name:string;
+  issuer:string;
+  date:string
+}
+
+type WorkListType = {
+  jobTitle:string;
+  place:string;
+  date:string
+}
+
 export interface MainProps {
-  certification: any;
-  work: any;
-  skills: any;
+  certification: {
+    title : string;
+    list : CertListType[]
+    primary? : number | number[]
+    secondary? : number | number[]
+  };
+  work: {
+    title : string;
+    list : WorkListType[]
+    primary? : number | number[]
+    secondary? : number | number[]
+  };
+  skills: {
+    title : string;
+    list : string[]
+  };
 }
 
 const Main: React.FC<MainProps> = ({ certification, work, skills }) => {

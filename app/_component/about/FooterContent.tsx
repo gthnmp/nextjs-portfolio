@@ -32,9 +32,9 @@ const MobileFooter: React.FC<FooterProps> = ({ potrait, contact }) => {
 
   return (
     <div className="relative grid grid-col-1 auto-rows-max gap-y-10 place-items-center">
-      <img src={potrait.source} alt={potrait.alt} className="footer-image" />
+      <img src={potrait.source} alt={potrait.alt} fetchPriority="high" className="footer-image" />
       <div className="footer-contact px-8 w-full">
-        <div onClick={() => setVisibilty((prev) => !prev)} className="border-b-1 py-2 border-white flex justify-between items-center">
+        <div onClick={() => setVisibilty((prev) => !prev)} className="border-b-1 py-2 border-neutral-900 dark:border-white flex justify-between items-center">
           <span>Get In Touch</span>
           {isContactVisible ? <AiOutlineMinus/> : <AiOutlinePlus />}
         </div>
@@ -42,7 +42,7 @@ const MobileFooter: React.FC<FooterProps> = ({ potrait, contact }) => {
           <ContactList list={contact.list}/>
         </div>
       </div>
-      <button className="footer-button p-4 rounded-full w-max h-max border border-white" onClick={handleClick}>
+    <button className="footer-button p-4 rounded-full w-max h-max border-1 border-neutral-900 dark:border-white" onClick={handleClick}>
         <BsArrowUp />
       </button>
     </div>
