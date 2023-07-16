@@ -1,4 +1,5 @@
 import './globals.css';
+import './preloaderAnimation.css';
 import { openSans, notoSerif, poiretOne } from '../_assets/fonts';
 import Navigation from '../_component/global/Navigation';
 
