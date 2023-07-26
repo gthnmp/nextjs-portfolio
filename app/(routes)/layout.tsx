@@ -2,6 +2,7 @@ import './globals.css';
 import './preloaderAnimation.css';
 import { openSans, notoSerif, poiretOne } from '../_assets/fonts';
 import Navigation from '../_component/global/Navigation';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className='bg-white text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100'>
         <Navigation/>
         {children}
+        <Analytics/>
       </body>
     </html>
   )
